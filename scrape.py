@@ -14,7 +14,7 @@ def acceptable(text):
 
 
 def split_def(sen: str):
-    split = [". a.", ". b.", ". c.", ". d.", ". e."]
+    split = [". a..", ". c.", ". d.", ". e."]
     splitted = []
     for i in split:
         if i in sen:
@@ -34,7 +34,7 @@ def remove_aft(i: str, j: str):
 
 
 dictionary = {}
-url = 'http://arabiclexicon.hawramani.com/habib-anthony-salmone-an-advanced-learners-arabic-english-dictionary/'
+url = 'http://arabiclexico.com/habib-anthony-salmone-an-advanced-learners-arabic-english-dictionary/'
 html = requests.get(url)
 
 soup = BeautifulSoup(html.content, 'html.parser')
@@ -60,7 +60,7 @@ for i in links[:6343]:
 # Number of words = 6335
 # print(len(lst))
 
-# I only did it to 10 words so we can reduce amount of requests made
+# I only did it to 10 o we can reduce amount of requests made
 for each in lst[:10]:
     new_html = requests.get(each)
     new_soup = BeautifulSoup(new_html.content, 'html.parser')
